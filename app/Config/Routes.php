@@ -18,3 +18,7 @@ $routes->get('/login', 'AuthController::registerView');
 $routes->get('/home', 'ReportController::home');
 $routes->get('/', 'HomeController::welcome');
 
+$routes->group('maintenance', function ($routes) {
+    $routes->post('create', 'MaintenanceController::create');
+    $routes->get('/', 'MaintenanceController::index');       // GET /maintenance/
+});

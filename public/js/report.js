@@ -1,4 +1,5 @@
-const apiUrl = "http://smartkos.iceiy.com/smartkos/public/report";
+const apiUrl = "https://powderblue-elephant-354385.hostingersite.com/report";
+const maintenanceApiUrl = "https://blue-alpaca-681720.hostingersite.com/maintenance";
 
 async function fetchWithAuth(url, options = {}) {
     const token = localStorage.getItem('authToken');
@@ -136,3 +137,40 @@ document.getElementById('logoutButton').addEventListener('click', () => {
     alert('Logged out successfully.');
     window.location.href = '/register'; 
 });
+
+document.getElementById('viewMaintenance').addEventListener('click', async () => {
+    try {
+        const response = await fetchWithAuth(maintenanceApiUrl);
+        if (!response.ok) {
+            throw new Error(`Failed to fetch maintenance schedules. Status: ${response.status}`);
+        }
+
+        const schedules = await response.json();
+        const list = document.getElementById('maintenanceList');
+
+        if (schedules.length === 0) {
+            list.innerHTML = `
+                <div class="no-report-message">
+                    <p>No maintenance schedules found.</p>
+                </div>
+            `;
+            return;
+        }
+
+        list.innerHTML = schedules.map(schedule => `
+            <div class="maintenance-card">
+                <h3>${schedule.maintenance_type}</h3>
+                <p><strong>Description:</strong> ${schedule.description}</p>
+                <p><strong>Facility:</strong> ${schedule.facility}</p>
+                <p><strong>Scheduled Date:</strong> ${schedule.scheduled_date}</p>
+                <p><strong>Status:</strong> 
+                    <span class="status ${schedule.status.toLowerCase()}">${schedule.status}</span>
+                </p>
+            </div>
+        `).join('');
+    } catch (error) {
+        console.error("Error fetching maintenance schedules:", error);
+        alert("An error occurred while fetching maintenance schedules.");
+    }
+});
+

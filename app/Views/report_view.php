@@ -49,7 +49,7 @@
 
         <!-- View Statistics -->
         <div class="card">
-            <h2>Statistics</h2>
+            <h2>Report Statistics</h2>
             <button id="viewStats">Get Statistics</button>
             <div id="stats" class="stats"></div>
         </div>
@@ -88,6 +88,14 @@
                 </div>
                 <button type="submit">Update Status</button>
             </form>
+        </div>
+
+        <div class="separator"></div>
+        <!-- View Maintenance Schedules -->
+        <div class="card">
+            <h2>View Maintenance Schedules</h2>
+            <button id="viewMaintenance">Get All Maintenance Schedules</button>
+            <div class="maintenance-list" id="maintenanceList"></div>
         </div>
 
         <!-- Logout -->

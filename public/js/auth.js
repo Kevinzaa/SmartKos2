@@ -1,4 +1,4 @@
-const apiUrl = "http://smartkos.iceiy.com/smartkos/public/auth";
+const apiUrl = "https://powderblue-elephant-354385.hostingersite.com/auth";
 
 document.getElementById('registerForm').addEventListener('submit', async (e) => {
     e.preventDefault();

@@ -125,7 +125,7 @@ button:active {
 }
 
 #statusFilter {
-    margin-bottom: 15px; /* Tambahkan jarak di bawah dropdown */
+    margin-bottom: 15px;
 }
 
 button#viewReports {
@@ -133,7 +133,7 @@ button#viewReports {
 }
 
 button#filterReports {
-    margin-top: 15px; /* Tambahkan jarak di atas tombol */
+    margin-top: 15px; 
     margin-bottom: 10px;
 }
 
@@ -200,4 +200,52 @@ button#filterReports {
         padding: 12px;
         font-size: 1rem;
     }
+}
+
+/* Maintenance Schedule Card */
+.maintenance-card {
+    margin-bottom: 20px;
+    margin-top: 10px;
+    padding: 15px;
+    background: #ffffff;
+    border-radius: 12px;
+    border-left: 5px solid #4a90e2;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.maintenance-card:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.maintenance-card h3 {
+    margin-top: 0;
+    font-size: 1.4rem;
+    color: #4a90e2;
+}
+
+.maintenance-card p {
+    margin: 8px 0;
+    font-size: 1rem;
+    color: #555;
+}
+
+.maintenance-card .status {
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 5px;
+    color: #fff;
+}
+
+.maintenance-card .status.pending {
+    background-color: #ffcc00; /* Yellow */
+}
+
+.maintenance-card .status.scheduled {
+    background-color: #007bff; /* Blue */
+}
+
+.maintenance-card .status.completed {
+    background-color: #28a745; /* Green */
 }
