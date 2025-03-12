@@ -51,17 +51,6 @@ Smartkos : https://powderblue-elephant-354385.hostingersite.com/
 2. Configure the environment variables:
     - Make `.env` in the root folder.
     - Paste code below:
-      ```env
-      CI_ENVIRONMENT = development
-      app.baseURL = 'http://localhost:8080/'
-
-      database.default.hostname = sql310.iceiy.com
-      database.default.database = icei_38055647_smartkos
-      database.default.username = icei_38055647
-      database.default.password = tyQsLnbMUAal
-      database.default.DBDriver = MySQLi
-      database.default.DBPrefix =
-      ```
 
 4. Start the development server:
     ```bash
